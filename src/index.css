@@ -23,3 +23,15 @@
     display: none;
   }
 }
+
+@keyframes awards-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.awards-track {
+  animation: awards-scroll 22s linear infinite;
+}
+.awards-track:hover {
+  animation-play-state: paused;
+}

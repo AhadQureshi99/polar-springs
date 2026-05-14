@@ -41,10 +41,51 @@ const SPECS = [
 ]
 
 const WARRANTIES = [
-  { title: 'Lifetime Frame Warranty',   desc: 'Our shells are warranted for as long as you own the product.' },
-  { title: '5 Year Cabinet Warranty',   desc: 'Cabinet panels and corners free from defects for five years.' },
-  { title: '3 Year Component Warranty', desc: 'All factory-installed electrical and plumbing components for three years.' },
-  { title: '1 Year Audio Warranty',     desc: 'Factory-installed audio system free from defects for one year.' },
+  { years: 'lifetime', title: 'Lifetime Frame Warranty',   desc: 'Our proprietary frame is warranted for as long as you own the product — built to last a lifetime.' },
+  { years: 5,          title: '5 Year Cabinet Warranty',   desc: 'Engineered for strength and style. Cabinet panels and corners are covered for five years against defects.' },
+  { years: 3,          title: '3 Year Component Warranty', desc: 'Soothing heat you can trust. All factory-installed electrical and plumbing components are warranted for three years.' },
+  { years: 1,          title: '1 Year Audio Warranty',     desc: 'The essentials are covered too. Factory-installed audio system is free from defects for one year of ownership.' },
+]
+
+const BUILD_PILLS = [
+  { key: 'insulation', label: 'Northern Seal™ Insulation' },
+  { key: 'shell',      label: 'Triple-Layer Acrylic Shell' },
+]
+const BUILD_POINTS = [
+  { num: 1, label: 'Thermal Shell',        desc: 'Each shell is wrapped in high-density foam insulation for superior heat retention year-round.' },
+  { num: 2, label: 'Perimeter Insulation', desc: 'Full perimeter foam sealing locks in heat and dramatically reduces energy running costs.' },
+  { num: 3, label: 'ABS Base',             desc: 'A robust ABS base guards against moisture intrusion and structural wear for lasting performance.' },
+]
+
+const SEATING_ITEMS = [
+  { label: 'Hydro-Massage Seats',      desc: 'Sit back and let powerful hydrotherapy jets target tight muscles in your neck, shoulders, and lower back. Purpose-built for serious daily stress relief.' },
+  { label: 'Barrier-Free Non-Lounger', desc: 'An open, social layout seats 8 adults with equal jet coverage and face-to-face seating — no compromise seats, full spa for everyone.' },
+  { label: 'Cool-Off Seat',            desc: 'A raised cool-down seat lets you regulate body temperature without leaving the spa — ideal for kids or between hydrotherapy sessions.' },
+  { label: 'Volcano Foot Dome',        desc: 'A centrally located powerful jet system delivers an invigorating foot and calf massage accessible from every seat in the spa.' },
+]
+
+const FEATURES_TABLE_ROWS = [
+  { icon: 'brand',     label: 'Brand',            value: 'Polar Springs' },
+  { icon: 'seat',      label: 'Total Seating',    value: '8 Person' },
+  { icon: 'jet',       label: 'Jets',             value: '61 Adjustable Jets' },
+  { icon: 'massage',   label: 'Massage Seating',  value: '8 Ergonomic Seats (Non-Lounger)' },
+  { icon: 'control',   label: 'Control System',   value: 'High-Performance Integrated Control' },
+  { icon: 'filter',    label: 'Filtration',       value: 'UVC Cartridge Filtration System' },
+  { icon: 'pump',      label: 'Circulation Pump', value: 'Dedicated Energy-Efficient Pump' },
+  { icon: 'water',     label: 'Water Care',       value: 'UVC Purification & Ozone Sanitisation' },
+  { icon: 'waterfall', label: 'Water Features',   value: 'LED Waterfall' },
+  { icon: 'insulate',  label: 'Insulation',       value: 'Northern Seal™ 4-Part' },
+  { icon: 'jetpump',   label: 'Jet Pump',         value: 'High-Performance Water Pump' },
+  { icon: 'heater',    label: 'Heater',           value: 'Energy-Efficient Electric Heater' },
+  { icon: 'shell',     label: 'Shell Material',   value: 'Triple-Layer Acrylic Shell' },
+  { icon: 'light',     label: 'Lighting',         value: 'Multi-Colour LED Ambiance Lighting' },
+]
+
+const SPEC_BOX_ROWS = [
+  { icon: 'weight', label: 'Weight',         value: '~350 kg' },
+  { icon: 'drop',   label: 'Water Capacity', value: '~1514 L (400 gal)' },
+  { icon: 'power',  label: 'Power',          value: '240V / 60 Hz' },
+  { icon: 'dims',   label: 'Dimensions',     value: '90″ × 90″ (2286 × 2286 mm)' },
 ]
 
 const KEY_FEATURES = [
@@ -155,6 +196,50 @@ const FOOTER_COLUMNS = [
   },
 ]
 
+const CMS_VID  = 'https://cms.alpinespas.co.nz/assets/content/products/spa-pools/_global/videos/features'
+const ALP_IMG  = 'https://alpinespas.imgix.net/assets/content/products/spa-pools/_global/images/features'
+const ALP_ICON = 'https://alpinespas.imgix.net/assets/icons'
+const WC_BG    = 'https://alpinespas.imgix.net/assets/demo/TextIconsWithSlider-bg.webp?auto=format,compress&h=800&q=90'
+
+const WATER_CARE_LIST = [
+  { key: 'uvc',       lines: ['UltraClear™',         'UV-C'],               icon: `${ALP_ICON}/texticonswithslider-icon-1.svg?auto=format,compress&q=90&fit=fill` },
+  { key: 'circ',      lines: ['WhisperQuiet™',        'Circulation Pump'],   icon: `${ALP_ICON}/texticonswithslider-icon-4.svg?auto=format,compress&q=90&fit=fill` },
+  { key: 'filter',    lines: ['Dual Microban™',       'Filters'],            icon: `${ALP_ICON}/texticonswithslider-icon-2.svg?auto=format,compress&q=90&fit=fill` },
+  { key: 'ozone',     lines: ['Ozone',                'Sanitisation'],       icon: `${ALP_ICON}/texticonswithslider-icon-3.svg?auto=format,compress&q=90&fit=fill` },
+  { key: 'waterfall', lines: ['Perpetual Filtration', 'LED Waterfall'],      icon: `${ALP_ICON}/texticonswithslider-icon-6.svg?auto=format,compress&q=90&fit=fill` },
+]
+
+const WATER_CARE_CARDS = [
+  {
+    key: 'uvc',
+    title: 'UltraClear™ UV-C',
+    desc: 'UltraClear™ UV-C helps neutralise bacteria before they become a problem. 99% of germs are removed from water passing through our UV-C sanitiser, meaning easier maintenance and less chlorine.',
+    type: 'video',
+    src: `${CMS_VID}/body-portrait-scroll-uvc-(1485x2200).mp4`,
+  },
+  {
+    key: 'circ',
+    title: 'WhisperQuiet™ Circulation Pump',
+    desc: "Enjoy cleaner water with our WhisperQuiet™ Circulation Pump that's dedicated to drawing water through your sanitisation systems, while reducing noise by up to 90% for a peaceful spa experience.",
+    type: 'video',
+    src: `${CMS_VID}/circ-jet.mp4`,
+  },
+  {
+    key: 'filter',
+    title: 'Dual Microban™ Filters',
+    desc: 'Dual antibacterial filters keep bacteria from multiplying, so your water stays cleaner longer. Thanks to their Microban® coating, they last longer and need less frequent replacement, making your spa care easier.',
+    type: 'img',
+    src: `${ALP_IMG}/body-portrait-scroll-filter-(1485x2200).jpg?auto=format,compress&w=620`,
+  },
+  {
+    key: 'ozone',
+    title: 'Ozone Sanitisation',
+    desc: "Ozone water care breaks down bacteria and contaminants, helping your spa stay clean between water changes. It's low maintenance, chemical-friendly, and keeps things crystal clear.",
+    type: 'video',
+    src: `${CMS_VID}/body-portrait-scroll-ozone-(1485x2200).mp4`,
+  },
+]
+
 function ChevronDown({ open }) {
   return (
     <svg className={`w-4 h-4 text-gray-400 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
@@ -173,10 +258,14 @@ export default function LumariSummit() {
   const [activeFeatureCat, setActiveFeatureCat] = useState('All Features')
   const [faqOpen,          setFaqOpen]          = useState(null)
   const [showFaqVideo,     setShowFaqVideo]     = useState(false)
+  const [buildPill, setBuildPill] = useState('insulation')
+  const [seatTab,   setSeatTab]   = useState('seating')
+  const [openSeat,  setOpenSeat]  = useState(0)
 
-  const featTrackRef = useRef(null)
-  const featBarRef   = useRef(null)
-  const featDragging = useRef(false)
+  const featTrackRef  = useRef(null)
+  const featBarRef    = useRef(null)
+  const featDragging  = useRef(false)
+  const waterCareRef  = useRef(null)
   const [featCanPrev,  setFeatCanPrev]  = useState(false)
   const [featCanNext,  setFeatCanNext]  = useState(true)
   const [featProgress, setFeatProgress] = useState(0)
@@ -815,6 +904,427 @@ export default function LumariSummit() {
           </div>
         </div>
 
+        {/* WATER CARE SECTION */}
+        <div className="mt-10 sm:mt-14 mb-10 sm:mb-12 overflow-x-hidden">
+          <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
+
+            {/* LEFT: blue panel (same height as cards) + icon list below */}
+            <div className="w-full lg:w-[34%] flex flex-col gap-5 lg:gap-6">
+
+              {/* Blue panel */}
+              <div className="rounded-2xl overflow-hidden relative min-h-[300px] sm:min-h-[360px] lg:min-h-[430px]">
+                <img
+                  src={WC_BG}
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="relative z-10 p-5 sm:p-7 lg:p-8 flex flex-col min-h-[300px] sm:min-h-[360px] lg:min-h-[430px]">
+                  <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-3 leading-snug">
+                    The Lumari Summit Makes Water Care Easy
+                  </h2>
+                  <p className="text-gray-700 text-sm leading-relaxed mb-5 sm:mb-8">
+                    The Lumari Summit's Mountain Pure™ Sanitisation System combines Ozone Purification with
+                    UV-C Technology to maintain fresh, healthy water. Spend less time cleaning and more time
+                    enjoying your spa.
+                  </p>
+                  {/* Nav arrows */}
+                  <div className="flex gap-2 mt-auto">
+                    <button
+                      onClick={() => waterCareRef.current?.scrollBy({ left: -326, behavior: 'smooth' })}
+                      className="w-9 h-9 rounded-full bg-white/80 hover:bg-white flex items-center justify-center transition shadow-sm"
+                      aria-label="Previous water care feature"
+                    >
+                      <svg className="w-4 h-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                      </svg>
+                    </button>
+                    <button
+                      onClick={() => waterCareRef.current?.scrollBy({ left: 326, behavior: 'smooth' })}
+                      className="w-9 h-9 rounded-full bg-white/80 hover:bg-white flex items-center justify-center transition shadow-sm"
+                      aria-label="Next water care feature"
+                    >
+                      <svg className="w-4 h-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Icon list — 2-col on mobile/desktop, 3-col on tablet (full-width) */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-x-4 gap-y-4 sm:gap-x-6 sm:gap-y-5">
+                {WATER_CARE_LIST.map(({ key, lines, icon }) => (
+                  <div key={key} className="flex items-center gap-2 sm:gap-3">
+                    <img src={icon} alt={lines.join(' ')} className="w-9 h-9 sm:w-10 sm:h-10 flex-shrink-0" />
+                    <p className="text-xs sm:text-sm text-gray-700 font-medium leading-tight">
+                      {lines[0]}<br />{lines[1]}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RIGHT: scrollable cards */}
+            <div className="flex-1 min-w-0 w-full">
+              <div
+                ref={waterCareRef}
+                className="flex gap-3 sm:gap-4 overflow-x-auto scrollbar-hide"
+                style={{ scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch' }}
+              >
+                {WATER_CARE_CARDS.map((card) => (
+                  <div
+                    key={card.key}
+                    className="flex-shrink-0 rounded-2xl overflow-hidden relative"
+                    style={{
+                      width: 'min(310px, calc(80vw - 1rem))',
+                      minHeight: 'clamp(340px, 55vw, 430px)',
+                      scrollSnapAlign: 'start',
+                      background: '#0a1929',
+                    }}
+                  >
+                    {/* Background media */}
+                    {card.type === 'video' ? (
+                      <video
+                        src={card.src}
+                        autoPlay muted loop playsInline
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
+                    ) : (
+                      <img src={card.src} alt={card.title} className="absolute inset-0 w-full h-full object-cover" />
+                    )}
+
+                    {/* Top brand icon */}
+                    <div className="absolute top-4 left-4 sm:top-5 sm:left-5 z-10">
+                      <WaterCardIcon type={card.key} />
+                    </div>
+
+                    {/* Text overlay */}
+                    <div className="absolute bottom-0 inset-x-0 px-4 sm:px-5 pt-5 pb-4 sm:pb-5 z-10"
+                      style={{ background: 'linear-gradient(to top,rgba(0,0,0,0.72) 0%,rgba(0,0,0,0.28) 70%,transparent 100%)' }}>
+                      <h3 className="text-white font-bold text-sm sm:text-base mb-1 sm:mb-2 leading-snug">{card.title}</h3>
+                      <p className="text-white/80 text-xs sm:text-sm leading-relaxed">{card.desc}</p>
+                    </div>
+                  </div>
+                ))}
+                <div className="flex-shrink-0 w-1" aria-hidden />
+              </div>
+
+              {/* Scroll indicator */}
+              <div className="mt-3 sm:mt-4 h-[4px] bg-gray-200 rounded-full overflow-hidden w-full">
+                <div className="h-full bg-[#1565c0] rounded-full" style={{ width: '55%' }} />
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        {/* ─── BUILT FOR CANADIAN CONDITIONS ─────────────────────────────── */}
+        <div className="mt-14 mb-12">
+          <div className="flex flex-col lg:flex-row gap-10 lg:gap-14 items-center">
+
+            {/* Left: product image */}
+            <div className="w-full lg:w-[48%] rounded-2xl overflow-hidden shadow-sm">
+              <img
+                src={`${CLD}/v1773487629/Lumari-Summit-Tiles-582x815-1_whsqjk.avif`}
+                alt="Lumari Summit construction quality"
+                className="w-full h-auto object-cover"
+              />
+            </div>
+
+            {/* Right: content */}
+            <div className="flex-1">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 leading-snug">
+                Built For Canadian Conditions
+              </h2>
+              <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-6">
+                Every Polar Springs spa is crafted with care, using top-quality materials and engineered
+                to handle Canada's toughest climates. Stays strong, retains heat, and looks great year after year.
+              </p>
+
+              {/* Pill buttons */}
+              <div className="flex flex-wrap gap-2 mb-8">
+                {BUILD_PILLS.map(pill => (
+                  <button
+                    key={pill.key}
+                    onClick={() => setBuildPill(pill.key)}
+                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                      buildPill === pill.key
+                        ? 'bg-[#1565c0] text-white shadow-sm'
+                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    }`}
+                  >{pill.label}</button>
+                ))}
+              </div>
+
+              {/* Numbered build points */}
+              <div className="space-y-5">
+                {BUILD_POINTS.map(pt => (
+                  <div key={pt.num} className="flex gap-4 items-start">
+                    <div className="w-8 h-8 rounded-full bg-[#1565c0] text-white flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">
+                      {pt.num}
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900 text-sm sm:text-base">{pt.label}</p>
+                      <p className="text-gray-500 text-sm leading-relaxed mt-0.5">{pt.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ─── COMFORT THAT BRINGS THE FAMILY TOGETHER ───────────────────── */}
+        <div className="mt-14 mb-12">
+          <div className="mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 leading-snug">
+              Comfort That Brings The Family Together
+            </h2>
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed max-w-3xl">
+              Sit back or stretch out. Every seat in the Lumari Summit is designed for comfort, conversation,
+              and full-body relaxation. It's the perfect layout for families who want to spa together.
+            </p>
+          </div>
+
+          {/* Tab buttons */}
+          <div className="flex flex-wrap gap-2 mb-8">
+            {[{ key: 'seating', label: 'Seating Layout' }, { key: 'jets', label: 'Hydrotherapy Jets™' }].map(tab => (
+              <button
+                key={tab.key}
+                onClick={() => setSeatTab(tab.key)}
+                className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${
+                  seatTab === tab.key
+                    ? 'bg-[#1565c0] text-white shadow-sm'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                }`}
+              >{tab.label}</button>
+            ))}
+          </div>
+
+          <div className="flex flex-col lg:flex-row gap-8 items-start">
+            {/* Left: image */}
+            <div className="w-full lg:w-[45%] rounded-2xl overflow-hidden shadow-sm">
+              <img
+                src={seatTab === 'seating'
+                  ? `${CLD}/v1773486728/582_x_815_Barrier_Free_Seating_qqdexu.png`
+                  : `${CLD}/v1773486730/582_x_815_Volcano_Foot_Dome_uljejs.png`}
+                alt={seatTab === 'seating' ? 'Seating layout' : 'Hydrotherapy jets'}
+                className="w-full h-auto object-cover"
+              />
+            </div>
+
+            {/* Right: description + accordion */}
+            <div className="flex-1 pt-1">
+              <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-6">
+                {seatTab === 'seating'
+                  ? 'The Lumari Summit seats eight with Hydro-Massage Seats, a Barrier-Free Non-Lounger Layout, and a Cool-Off Seat — ideal for social soaking and full-body relaxation.'
+                  : 'Every seat is equipped with precision adjustable jets engineered for targeted muscle relief from shoulders to lower back, plus a centrally located Volcano Foot Dome.'}
+              </p>
+
+              <div className="divide-y divide-gray-200 border-t border-gray-200">
+                {(seatTab === 'seating' ? SEATING_ITEMS : SEATING_ITEMS.slice(0, 2)).map((item, i) => (
+                  <div key={i}>
+                    <button
+                      onClick={() => setOpenSeat(openSeat === i ? null : i)}
+                      className="w-full flex items-center justify-between py-4 text-left gap-4"
+                    >
+                      <span className={`text-sm sm:text-base font-semibold transition-colors ${openSeat === i ? 'text-[#1565c0]' : 'text-gray-900'}`}>
+                        {item.label}
+                      </span>
+                      <svg className={`w-4 h-4 text-gray-400 flex-shrink-0 transition-transform ${openSeat === i ? 'rotate-180 text-[#1565c0]' : ''}`}
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                    {openSeat === i && (
+                      <p className="pb-4 text-sm text-gray-600 leading-relaxed -mt-2">{item.desc}</p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ─── FEATURES & SPECIFICATIONS ─────────────────────────────────── */}
+        <div className="mt-14 mb-12">
+          <div className="flex flex-col lg:flex-row gap-10 items-start">
+
+            {/* LEFT: Features table */}
+            <div className="w-full lg:w-[55%]">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">Features</h2>
+              <div className="rounded-2xl border border-gray-200 overflow-hidden">
+                {FEATURES_TABLE_ROWS.map((row, i) => (
+                  <div
+                    key={row.label}
+                    className={`flex items-center gap-4 px-5 py-3.5 ${i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}
+                  >
+                    <div className="w-9 h-9 rounded-full bg-[#e8f0fe] flex items-center justify-center flex-shrink-0">
+                      <SpecIcon type={row.icon} />
+                    </div>
+                    <span className="text-sm font-semibold text-gray-700 w-36 flex-shrink-0">{row.label}</span>
+                    <span className="text-sm text-gray-900">{row.value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RIGHT: Specifications */}
+            <div className="flex-1 w-full">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">Specifications</h2>
+
+              {/* Product image */}
+              <div className="rounded-2xl overflow-hidden mb-5 shadow-sm">
+                <img
+                  src={`${CLD}/v1773486896/Lummari-Summit-1024x1024-1_jbohxj.png`}
+                  alt="Lumari Summit"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+
+              {/* Spec metrics */}
+              <div className="rounded-2xl border border-gray-200 overflow-hidden mb-6">
+                {SPEC_BOX_ROWS.map((row, i) => (
+                  <div
+                    key={row.label}
+                    className={`flex items-center gap-4 px-5 py-3.5 ${i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}
+                  >
+                    <div className="w-9 h-9 rounded-full bg-[#e8f0fe] flex items-center justify-center flex-shrink-0">
+                      <SpecIcon type={row.icon} />
+                    </div>
+                    <span className="text-sm font-semibold text-gray-700 w-32 flex-shrink-0">{row.label}</span>
+                    <span className="text-sm font-semibold text-gray-900">{row.value}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* CTA buttons */}
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="#"
+                  className="inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-6 py-2.5 rounded-lg font-semibold text-sm transition-colors"
+                >
+                  Download Brochure
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1M16 12l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  className="inline-flex items-center gap-2 border border-gray-300 hover:border-gray-400 text-gray-700 px-6 py-2.5 rounded-lg font-semibold text-sm transition-colors"
+                >
+                  Add to Compare
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 19V6l12-3v13M9 19c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm12-3c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        {/* ─── PREMIUM WARRANTIES ─────────────────────────────────────────── */}
+        <div className="mt-14 mb-12 rounded-2xl overflow-hidden" style={{ background: '#0d2244' }}>
+          <div className="px-6 sm:px-8 lg:px-10 py-10 sm:py-14">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">Premium Warranties</h2>
+            <p className="text-blue-200/70 text-sm sm:text-base mb-8 max-w-xl">
+              Every Polar Springs hot tub is backed by a premium warranty — so you can relax knowing you're well covered.
+            </p>
+            <div className="flex flex-col lg:flex-row gap-6 items-stretch">
+
+              {/* Video panel */}
+              <div className="w-full lg:w-[240px] xl:w-[260px] flex-shrink-0">
+                <div className="rounded-xl overflow-hidden relative h-full" style={{ minHeight: '260px' }}>
+                  <video
+                    src="https://cms.alpinespas.co.nz/assets/content/products/hot-tubs/_global/videos/hot-tubs-faqs/general-(no-subtitles)/what-s-the-warranty-and-what-does-it-actually-cover_9x16.mp4"
+                    controls
+                    className="w-full h-full object-cover rounded-xl"
+                    style={{ maxHeight: '420px', display: 'block' }}
+                  />
+                  <div className="absolute bottom-0 inset-x-0 px-4 py-3 pointer-events-none"
+                    style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%)' }}>
+                    <p className="text-white font-bold text-sm leading-tight">Premium Warranties</p>
+                    <p className="text-white/70 text-xs">&amp; Expert Advice</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Warranty cards */}
+              <div className="flex-1 flex flex-col gap-3">
+                {WARRANTIES.map(({ years, title, desc }) => (
+                  <div key={title}
+                    className="flex items-start gap-4 rounded-xl px-4 py-4 border border-white/10"
+                    style={{ background: 'rgba(255,255,255,0.07)' }}>
+                    <WarrantyBadge years={years} />
+                    <div>
+                      <h3 className="text-white font-bold text-sm sm:text-base mb-1">{title}</h3>
+                      <p className="text-blue-100/70 text-xs sm:text-sm leading-relaxed">{desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        {/* ─── AWARDS TRUST BAR ───────────────────────────────────────────── */}
+        <div className="mt-14 -mx-4 sm:-mx-6 lg:-mx-10 overflow-hidden" style={{ background: '#f5c800' }}>
+          <div className="px-4 sm:px-6 lg:px-10 py-10 sm:py-14">
+
+            {/* Scrolling award logos */}
+            <div
+              className="overflow-hidden mb-10 sm:mb-12"
+              style={{
+                WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)',
+                maskImage:        'linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)',
+              }}
+            >
+              <div className="awards-track flex items-center" style={{ gap: '4rem', width: 'max-content' }}>
+                {[
+                  { src: `${ALP_ICON}/awards/awards-airbnb.svg`,        alt: 'Airbnb – Featured in 5-Star Escapes' },
+                  { src: `${ALP_ICON}/awards/awards-spasa-retailer.svg`, alt: 'SPASA Retailer of the Year' },
+                  { src: `${ALP_ICON}/awards/awards-google.svg`,         alt: 'Google – Rated 4.9 Stars' },
+                  { src: `${ALP_ICON}/awards/awards-if-design.svg`,      alt: 'iF Design Award' },
+                  { src: `${ALP_ICON}/awards/awards-yotpo.svg`,          alt: 'Yotpo – Rated 4.9 Stars' },
+                  // duplicate set for seamless loop
+                  { src: `${ALP_ICON}/awards/awards-airbnb.svg`,        alt: 'Airbnb b' },
+                  { src: `${ALP_ICON}/awards/awards-spasa-retailer.svg`, alt: 'SPASA b' },
+                  { src: `${ALP_ICON}/awards/awards-google.svg`,         alt: 'Google b' },
+                  { src: `${ALP_ICON}/awards/awards-if-design.svg`,      alt: 'iF Design b' },
+                  { src: `${ALP_ICON}/awards/awards-yotpo.svg`,          alt: 'Yotpo b' },
+                ].map(({ src, alt }) => (
+                  <img
+                    key={alt}
+                    src={`${src}?auto=format,compress&h=120&q=90&fm=webp&fit=fill`}
+                    alt={alt}
+                    className="h-16 sm:h-20 lg:h-24 w-auto object-contain flex-shrink-0"
+                    draggable={false}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Heading + CTA */}
+            <div className="text-center">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800 mb-3">
+                Canada's Award-Winning Hot Tub &amp; Spa Specialist
+              </h2>
+              <p className="text-gray-700/90 text-sm sm:text-base mb-6 max-w-xl mx-auto leading-relaxed">
+                From stocked showrooms and speedy delivery to local support, we're setting the standard in the wellness industry, and the awards prove it.
+              </p>
+              <a
+                href="#"
+                className="inline-flex items-center gap-2 border-2 border-gray-800 text-gray-800 font-semibold px-7 py-2.5 rounded-full hover:bg-gray-800 hover:text-yellow-400 transition-colors text-sm sm:text-base"
+              >
+                See Why We Win <span aria-hidden="true">→</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
       </main>
 
       <footer className="bg-[#1f1f1f] text-gray-300 mt-8">
@@ -872,4 +1382,184 @@ function FeatArrow({ left = false }) {
       <path d="M1.00012 8.28723C0.447836 8.28723 0.000120211 8.73495 0.000120163 9.28723C0.000120115 9.83951 0.447836 10.2872 1.00012 10.2872L1.00012 8.28723ZM15.0001 9.28723L15.0001 8.28723L1.00012 8.28723L1.00012 9.28723L1.00012 10.2872L15.0001 10.2872L15.0001 9.28723Z" fill="currentColor" />
     </svg>
   )
+}
+
+/* ── Warranty shield badge ───────────────────────────────────────────── */
+function WarrantyBadge({ years }) {
+  const label = years === 'lifetime' ? '∞' : String(years)
+  const isLifetime = years === 'lifetime'
+  return (
+    <svg viewBox="0 0 60 72" fill="none" className="w-14 h-16 flex-shrink-0">
+      {/* Shield body */}
+      <path d="M30 3 L5 13 L5 36 Q5 56 30 69 Q55 56 55 36 L55 13 Z" fill="#1565c0"/>
+      {/* Inner highlight ring */}
+      <path d="M30 9 L10 18 L10 36 Q10 52 30 63 Q50 52 50 36 L50 18 Z" fill="none" stroke="white" strokeOpacity="0.15" strokeWidth="1.2"/>
+      {/* Year or infinity */}
+      <text x="30" y="37" textAnchor="middle" dominantBaseline="middle"
+        fontSize={isLifetime ? '28' : '22'} fontWeight="800" fill="white" fontFamily="system-ui, sans-serif">
+        {label}
+      </text>
+      {/* YEARS label */}
+      {!isLifetime && (
+        <text x="30" y="51" textAnchor="middle" fontSize="7" fontWeight="600"
+          fill="white" fillOpacity="0.8" fontFamily="system-ui, sans-serif" letterSpacing="1">
+          YEARS
+        </text>
+      )}
+      {/* WARRANTY banner ribbon */}
+      <path d="M5 57 Q5 69 9 69 L51 69 Q55 69 55 57 L55 57 Z" fill="#0d47a1"/>
+      <text x="30" y="65" textAnchor="middle" fontSize="6.2" fontWeight="700"
+        fill="white" fontFamily="system-ui, sans-serif" letterSpacing="0.8">
+        WARRANTY
+      </text>
+    </svg>
+  )
+}
+
+/* ── Features / Spec table icons ──────────────────────────────────────── */
+function SpecIcon({ type }) {
+  const p = { className: 'w-5 h-5 text-[#1565c0]', fill: 'none', viewBox: '0 0 24 24', stroke: 'currentColor', strokeWidth: 1.8, strokeLinecap: 'round', strokeLinejoin: 'round' }
+  if (type === 'brand')     return <svg {...p}><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><circle cx="7" cy="7" r="1" fill="currentColor" stroke="none"/></svg>
+  if (type === 'seat')      return <svg {...p}><circle cx="12" cy="7" r="3"/><path d="M5 20c0-3.31 3.13-6 7-6s7 2.69 7 6"/></svg>
+  if (type === 'jet')       return <svg {...p}><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  if (type === 'massage')   return <svg {...p}><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+  if (type === 'control')   return <svg {...p}><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+  if (type === 'filter')    return <svg {...p}><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+  if (type === 'pump')      return <svg {...p}><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg>
+  if (type === 'water')     return <svg {...p}><path d="M12 2c0 0-7 6.5-7 11a7 7 0 0014 0c0-4.5-7-11-7-11z"/></svg>
+  if (type === 'waterfall') return <svg {...p}><path d="M3 6h18M3 12h14M3 18h10"/></svg>
+  if (type === 'insulate')  return <svg {...p}><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+  if (type === 'jetpump')   return <svg {...p}><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+  if (type === 'heater')    return <svg {...p}><path d="M12 22a7 7 0 007-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 007 7z"/></svg>
+  if (type === 'shell')     return <svg {...p}><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+  if (type === 'light')     return <svg {...p}><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0018 8 6 6 0 006 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 018.91 14"/></svg>
+  if (type === 'weight')    return <svg {...p}><path d="M6 2h12l4 18H2L6 2z"/><line x1="12" y1="6" x2="12" y2="14"/><path d="M9 9h6"/></svg>
+  if (type === 'drop')      return <svg {...p}><path d="M12 2c0 0-7 6.5-7 11a7 7 0 0014 0c0-4.5-7-11-7-11z"/></svg>
+  if (type === 'power')     return <svg {...p}><path d="M18.36 6.64a9 9 0 1 1-12.73 0"/><line x1="12" y1="2" x2="12" y2="12"/></svg>
+  if (type === 'dims')      return <svg {...p}><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+  return null
+}
+
+/* ── Water Care icons (left feature list) ─────────────────────────────── */
+function WaterCareIcon({ type }) {
+  const cls = 'w-5 h-5 text-[#1565c0]'
+  if (type === 'uvc') return (
+    <svg className={cls} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+    </svg>
+  )
+  if (type === 'circ') return (
+    <svg className={cls} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+      <path strokeLinecap="round" strokeLinejoin="round"
+        d="M4 12a8 8 0 0 1 8-8 8 8 0 0 1 5.66 2.34M20 12a8 8 0 0 1-8 8 8 8 0 0 1-5.66-2.34" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M20 4v4h-4M4 20v-4h4" />
+    </svg>
+  )
+  if (type === 'filter') return (
+    <svg className={cls} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 4h18M6 8h12M9 12h6M11 16h2" />
+    </svg>
+  )
+  if (type === 'ozone') return (
+    <svg className={cls} viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" strokeWidth="1.8" />
+      <text x="12" y="15.5" textAnchor="middle" fontSize="7" fontWeight="700" fill="currentColor" fontFamily="sans-serif">O₃</text>
+    </svg>
+  )
+  /* waterfall */
+  return (
+    <svg className={cls} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 5h18M3 9h14M3 13h10M3 17h6" />
+    </svg>
+  )
+}
+
+/* ── Water Care card top brand marks ──────────────────────────────────── */
+function WaterCardIcon({ type }) {
+  if (type === 'uvc') return (
+    <div className="flex items-center gap-1.5">
+      <svg className="w-8 h-8 text-white/90" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+      </svg>
+    </div>
+  )
+  if (type === 'filter') return (
+    <span className="text-white/90 text-[11px] font-black tracking-[0.18em] uppercase">
+      MICROBAN<sup style={{ fontSize: '7px', verticalAlign: 'super' }}>®</sup>
+    </span>
+  )
+  if (type === 'ozone') return (
+    <div className="w-10 h-10 rounded-full border-2 border-white/60 flex items-center justify-center">
+      <span className="text-white/90 text-[11px] font-bold leading-none">O₃</span>
+    </div>
+  )
+  return null
+}
+
+/* ── Water Care card decorative illustration ──────────────────────────── */
+function WaterCardDecor({ type }) {
+  if (type === 'uvc') return (
+    <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
+      <svg viewBox="0 0 80 120" className="w-44 h-56" fill="none">
+        <circle cx="40" cy="58" r="36" stroke="white" strokeOpacity="0.07" strokeWidth="1" />
+        <circle cx="40" cy="58" r="26" stroke="white" strokeOpacity="0.09" strokeWidth="1" />
+        {/* body */}
+        <rect x="28" y="24" width="24" height="68" rx="12" fill="white" fillOpacity="0.14" />
+        {/* glow core */}
+        <ellipse cx="40" cy="58" rx="10" ry="34" fill="rgba(160,80,240,0.18)" />
+        {/* pins */}
+        <rect x="32" y="13" width="4" height="13" rx="2" fill="white" fillOpacity="0.28" />
+        <rect x="44" y="13" width="4" height="13" rx="2" fill="white" fillOpacity="0.28" />
+        {/* water droplets */}
+        {[16,24,32,20,28,36,22,30].map((x, i) => (
+          <circle key={i} cx={x} cy={22 + i * 10} r="1.2" fill="white" fillOpacity="0.25" />
+        ))}
+      </svg>
+    </div>
+  )
+  if (type === 'circ') return (
+    <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
+      <svg viewBox="0 0 100 100" className="w-52 h-52" fill="none">
+        <circle cx="50" cy="50" r="44" stroke="white" strokeOpacity="0.07" strokeDasharray="4 3" />
+        <circle cx="50" cy="50" r="30" stroke="white" strokeOpacity="0.1" strokeWidth="1" />
+        <circle cx="50" cy="50" r="14" stroke="white" strokeOpacity="0.12" strokeWidth="1.5" />
+        <path d="M50 6 A44 44 0 1 1 6 50" stroke="white" strokeOpacity="0.22" strokeWidth="2" strokeLinecap="round" />
+        <polygon points="50,3 44,12 56,12" fill="white" fillOpacity="0.3" />
+        {/* water ripples */}
+        <ellipse cx="50" cy="75" rx="20" ry="5" stroke="white" strokeOpacity="0.1" strokeWidth="1" />
+        <ellipse cx="50" cy="75" rx="30" ry="8" stroke="white" strokeOpacity="0.06" strokeWidth="1" />
+      </svg>
+    </div>
+  )
+  if (type === 'filter') return (
+    <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
+      <svg viewBox="0 0 70 100" className="w-36 h-52" fill="none">
+        <ellipse cx="35" cy="14" rx="28" ry="8" stroke="white" strokeOpacity="0.2" strokeWidth="1.2" />
+        <rect x="7" y="14" width="56" height="58" rx="4" stroke="white" strokeOpacity="0.18" strokeWidth="1.2" />
+        <ellipse cx="35" cy="72" rx="28" ry="8" stroke="white" strokeOpacity="0.2" strokeWidth="1.2" />
+        {[30, 40, 50, 60].map((y, i) => (
+          <line key={i} x1="14" y1={y} x2="56" y2={y} stroke="white" strokeOpacity="0.12" strokeWidth="1" strokeDasharray="3 2" />
+        ))}
+        <line x1="35" y1="80" x2="35" y2="100" stroke="white" strokeOpacity="0.18" strokeWidth="1.5" />
+      </svg>
+    </div>
+  )
+  if (type === 'ozone') return (
+    <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
+      <svg viewBox="0 0 100 100" className="w-52 h-52" fill="none">
+        <circle cx="50" cy="50" r="44" stroke="white" strokeOpacity="0.06" strokeDasharray="3 2" />
+        <circle cx="50" cy="50" r="30" stroke="white" strokeOpacity="0.1" strokeWidth="1.2" />
+        <circle cx="50" cy="50" r="14" stroke="white" strokeOpacity="0.14" strokeWidth="1.5" />
+        {/* Molecule nodes */}
+        <circle cx="50" cy="18" r="5.5" fill="white" fillOpacity="0.15" />
+        <circle cx="74" cy="64" r="5.5" fill="white" fillOpacity="0.15" />
+        <circle cx="26" cy="64" r="5.5" fill="white" fillOpacity="0.15" />
+        {/* Bonds */}
+        <line x1="50" y1="23.5" x2="50" y2="36" stroke="white" strokeOpacity="0.2" strokeWidth="1.2" />
+        <line x1="69" y1="59" x2="61" y2="53" stroke="white" strokeOpacity="0.2" strokeWidth="1.2" />
+        <line x1="31" y1="59" x2="39" y2="53" stroke="white" strokeOpacity="0.2" strokeWidth="1.2" />
+      </svg>
+    </div>
+  )
+  return null
 }
